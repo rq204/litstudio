@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net461</TargetFramework>
+		<AssemblyVersion>2.0.21.324</AssemblyVersion>
+		<FileVersion>1.0.21.324</FileVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MailKit" Version="3.4.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\litsdk\litsdk.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<Reference Include="System.Windows.Forms" />
+		<Compile Update="FrmMailConfig.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FrmMailConfig.Designer.cs">
+			<DependentUpon>FrmMailConfig.cs</DependentUpon>
+		</Compile>
+		<Compile Update="ReceiveMailUI.cs" />
+		<Compile Update="ReceiveMailUI.Designer.cs">
+			<DependentUpon>ReceiveMailUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="SendMailUI.cs" />
+		<Compile Update="SendMailUI.Designer.cs">
+			<DependentUpon>SendMailUI.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<EmbeddedResource Update="FrmMailConfig.resx">
+			<DependentUpon>FrmMailConfig.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="ReceiveMailUI.resx">
+			<DependentUpon>ReceiveMailUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="SendMailUI.resx">
+			<DependentUpon>SendMailUI.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>
+
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<Compile Remove="*UI*.cs" />
+		<Compile Remove="FrmMailConfig*.cs" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+</Project>

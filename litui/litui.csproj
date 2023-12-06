@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D546D00A-4FE8-4045-B6A5-860E72F3F47C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>litui</RootNamespace>
+    <AssemblyName>litui</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="FlaUI.Core, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FlaUI.Core.3.2.0\lib\net45\FlaUI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FlaUI.UIA3, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FlaUI.UIA3.3.2.0\lib\net45\FlaUI.UIA3.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.UserActivityMonitor">
+      <HintPath>..\Debug\Gma.UserActivityMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.UIAutomationClient, Version=10.0.18362.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Interop.UIAutomationClient.10.18362.0\lib\net45\Interop.UIAutomationClient.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClickActivity.cs" />
+    <Compile Include="ClickType.cs" />
+    <Compile Include="FillOpenDialog.cs" />
+    <Compile Include="FindActivity.cs" />
+    <Compile Include="FindUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FindUI.Designer.cs">
+      <DependentUpon>FindUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetTextActivity.cs" />
+    <Compile Include="GetTextUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GetTextUI.Designer.cs">
+      <DependentUpon>GetTextUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\BmpColor.cs" />
+    <Compile Include="Image\CaptureImage\CaptureImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image\CaptureImage\CaptureImage.Designer.cs">
+      <DependentUpon>CaptureImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\CaptureImage\CaptureImageToolColorTable.cs" />
+    <Compile Include="Image\CaptureImage\ControlPaintEx.cs" />
+    <Compile Include="Image\CaptureImage\DrawStyle.cs" />
+    <Compile Include="Image\CaptureImage\DrawTextData.cs" />
+    <Compile Include="Image\CaptureImage\DrawToolsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Image\CaptureImage\DrawToolsControl.designer.cs">
+      <DependentUpon>DrawToolsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\CaptureImage\DrawToolsDockStyle.cs" />
+    <Compile Include="Image\CaptureImage\GraphicsPathHelper.cs" />
+    <Compile Include="Image\CaptureImage\NativeMethods.cs" />
+    <Compile Include="Image\CaptureImage\OperateManager.cs" />
+    <Compile Include="Image\CaptureImage\OperateObject.cs" />
+    <Compile Include="Image\CaptureImage\OperateType.cs" />
+    <Compile Include="Image\CaptureImage\RegionHelper.cs" />
+    <Compile Include="Image\CaptureImage\RoundStyle.cs" />
+    <Compile Include="Image\CaptureImage\SizeGrip.cs" />
+    <Compile Include="Image\CaptureImage\ToolStripRendererEx.cs" />
+    <Compile Include="Image\ImageCutActivity.cs" />
+    <Compile Include="Image\ImageCutUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Image\ImageCutUI.Designer.cs">
+      <DependentUpon>ImageCutUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\ImgClickActivity.cs" />
+    <Compile Include="Image\ImgClickUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Image\ImgClickUI.Designer.cs">
+      <DependentUpon>ImgClickUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\ImgExistActivity.cs" />
+    <Compile Include="Image\ImgExistUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Image\ImgExistUI.Designer.cs">
+      <DependentUpon>ImgExistUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\ImageBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Image\ImageBase.Designer.cs">
+      <DependentUpon>ImageBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\ImgConfig.cs" />
+    <Compile Include="Image\ImgWaitActivity.cs" />
+    <Compile Include="Image\ImgWaitUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Image\ImgWaitUI.Designer.cs">
+      <DependentUpon>ImgWaitUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image\OrientType .cs" />
+    <Compile Include="FillOpenDialogUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FillOpenDialogUI.Designer.cs">
+      <DependentUpon>FillOpenDialogUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MouseMoveActivity.cs" />
+    <Compile Include="MouseMoveType.cs" />
+    <Compile Include="MouseMoveUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MouseMoveUI.Designer.cs">
+      <DependentUpon>MouseMoveUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenShotActivity.cs" />
+    <Compile Include="ScreenShotUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenShotUI.Designer.cs">
+      <DependentUpon>ScreenShotUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollActivity.cs" />
+    <Compile Include="ScrollUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScrollUI.Designer.cs">
+      <DependentUpon>ScrollUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendHotkeyActivity.cs" />
+    <Compile Include="TypeIntoActivity.cs" />
+    <Compile Include="TypeIntoUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TypeIntoUI.Designer.cs">
+      <DependentUpon>TypeIntoUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiAutomation\Debug.cs" />
+    <Compile Include="UiAutomation\UISelecter.cs" />
+    <Compile Include="UIConfig.cs" />
+    <Compile Include="ClickUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClickUI.Designer.cs">
+      <DependentUpon>ClickUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LitUiBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LitUiBase.Designer.cs">
+      <DependentUpon>LitUiBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendHotkeyUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendHotkeyUI.Designer.cs">
+      <DependentUpon>SendHotkeyUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiAutomation\OverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiAutomation\OverlayForm.Designer.cs">
+      <DependentUpon>OverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitActivity.cs" />
+    <Compile Include="WaitType.cs" />
+    <Compile Include="WaitUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaitUI.Designer.cs">
+      <DependentUpon>WaitUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowActivity.cs" />
+    <Compile Include="WindowType.cs" />
+    <Compile Include="WindowUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowUI.Designer.cs">
+      <DependentUpon>WindowUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClickUI.resx">
+      <DependentUpon>ClickUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindUI.resx">
+      <DependentUpon>FindUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetTextUI.resx">
+      <DependentUpon>GetTextUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\CaptureImage\CaptureImage.resx">
+      <DependentUpon>CaptureImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\CaptureImage\DrawToolsControl.resx">
+      <DependentUpon>DrawToolsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\ImageCutUI.resx">
+      <DependentUpon>ImageCutUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\ImgClickUI.resx">
+      <DependentUpon>ImgClickUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\ImgExistUI.resx">
+      <DependentUpon>ImgExistUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\ImageBase.resx">
+      <DependentUpon>ImageBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\ImgWaitUI.resx">
+      <DependentUpon>ImgWaitUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FillOpenDialogUI.resx">
+      <DependentUpon>FillOpenDialogUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LitUiBase.resx">
+      <DependentUpon>LitUiBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MouseMoveUI.resx">
+      <DependentUpon>MouseMoveUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenShotUI.resx">
+      <DependentUpon>ScreenShotUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScrollUI.resx">
+      <DependentUpon>ScrollUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendHotkeyUI.resx">
+      <DependentUpon>SendHotkeyUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeIntoUI.resx">
+      <DependentUpon>TypeIntoUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiAutomation\OverlayForm.resx">
+      <DependentUpon>OverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitUI.resx">
+      <DependentUpon>WaitUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowUI.resx">
+      <DependentUpon>WindowUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Accept.ico" />
+    <None Include="Resource\Arrow.ico" />
+    <None Include="Resource\Ellipse.ico" />
+    <None Include="Resource\Exit.ico" />
+    <None Include="Resource\Line.ico" />
+    <None Include="Resource\Rectangular.ico" />
+    <None Include="Resource\Redo.png" />
+    <None Include="Resource\Save.ico" />
+    <None Include="Resource\Text.ico" />
+    <Content Include="Resource\Arrow_M.ico" />
+    <Content Include="Resource\cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\litsdk\litsdk.csproj">
+      <Project>{48a0597a-0553-40d3-9e8b-5e1858d3451c}</Project>
+      <Name>litsdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Interop.UIAutomationClient.10.18362.0\build\Interop.UIAutomationClient.targets" Condition="Exists('..\packages\Interop.UIAutomationClient.10.18362.0\build\Interop.UIAutomationClient.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Interop.UIAutomationClient.10.18362.0\build\Interop.UIAutomationClient.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Interop.UIAutomationClient.10.18362.0\build\Interop.UIAutomationClient.targets'))" />
+  </Target>
+</Project>

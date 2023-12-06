@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net461</TargetFramework>
+		<AssemblyVersion>2.7.22.113</AssemblyVersion>
+		<FileVersion>2.7.22.113</FileVersion>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<Reference Include="System.Windows.Forms" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<Compile Remove="Resource.resx" />
+		<Compile Remove="Resource.Designer.cs" />
+		<Compile Remove="*.designer.cs" />
+		<Compile Remove="ILitUI.cs" />
+		<Compile Remove="InsertVarName.cs" />
+		<Compile Remove="SelectMultVarName.cs" />
+		<Compile Remove="SelectVarName.cs" />
+		<Compile Remove="Resources\edit.png" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="System.Resources.Extensions" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="System.Resources.Extensions" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<Compile Update="ILitUI.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="InsertVarName.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="InsertVarName.designer.cs">
+			<DependentUpon>InsertVarName.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Resource.Designer.cs">
+			<DependentUpon>Resource.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="SelectMultVarName.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="SelectMultVarName.designer.cs">
+			<DependentUpon>SelectMultVarName.cs</DependentUpon>
+		</Compile>
+		<Compile Update="SelectVarName.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="SelectVarName.designer.cs">
+			<DependentUpon>SelectVarName.cs</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="InsertVarName.resx">
+			<DependentUpon>InsertVarName.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Resource.resx">
+			<LastGenOutput>Resource.Designer.cs</LastGenOutput>
+			<Generator>ResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="SelectMultVarName.resx">
+			<DependentUpon>SelectMultVarName.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="SelectVarName.resx">
+			<DependentUpon>SelectVarName.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="ILitUI.resx">
+			<DependentUpon>ILitUI.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+	  <DocumentationFile>..\Debug\litsdk.xml</DocumentationFile>
+	</PropertyGroup>
+
+</Project>

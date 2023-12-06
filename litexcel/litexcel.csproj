@@ -1,0 +1,98 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net461</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Properties\**" />
+	  <EmbeddedResource Remove="Properties\**" />
+	  <None Remove="Properties\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NPOI" Version="2.5.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\litsdk\litsdk.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<Reference Include="System.Windows.Forms" />
+		<Compile Update="DeleteRowUI.cs" />
+		<Compile Update="DeleteRowUI.designer.cs">
+			<DependentUpon>DeleteRowUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="ExcelInfoUI.cs" />
+		<Compile Update="ExcelInfoUI.designer.cs">
+			<DependentUpon>ExcelInfoUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="ExcelToTableUI.cs" />
+		<Compile Update="ExcelToTableUI.designer.cs">
+			<DependentUpon>ExcelToTableUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="OpenUI.cs" />
+		<Compile Update="OpenUI.designer.cs">
+			<DependentUpon>OpenUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="ReadUI.cs" />
+		<Compile Update="ReadUI.designer.cs">
+			<DependentUpon>ReadUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="SaveUI.cs" />
+		<Compile Update="SaveUI.designer.cs">
+			<DependentUpon>SaveUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="SheetUI.cs" />
+		<Compile Update="SheetUI.designer.cs">
+			<DependentUpon>SheetUI.cs</DependentUpon>
+		</Compile>
+		<Compile Update="WriteUI.cs" />
+		<Compile Update="WriteUI.designer.cs">
+			<DependentUpon>WriteUI.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<EmbeddedResource Update="DeleteRowUI.resx">
+			<DependentUpon>DeleteRowUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="ExcelInfoUI.resx">
+			<DependentUpon>ExcelInfoUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="ExcelToTableUI.resx">
+			<DependentUpon>ExcelToTableUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="OpenUI.resx">
+			<DependentUpon>OpenUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="ReadUI.resx">
+			<DependentUpon>ReadUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="SaveUI.resx">
+			<DependentUpon>SaveUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="SheetUI.resx">
+			<DependentUpon>SheetUI.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="WriteUI.resx">
+			<DependentUpon>WriteUI.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<Compile Remove="*UI*.cs" />
+		<Compile Remove="ExcelLoadW.cs" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+</Project>
