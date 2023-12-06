@@ -43,11 +43,6 @@ namespace litcore
                 }
                 catch { others.Add(filename); }
             }
-
-            //if (others.Count > 0)
-            //{
-            //    System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "Other.txt", string.Join(",", others.ToArray()), System.Text.Encoding.UTF8);
-            //}
         }
 
         private static Dictionary<string, Activity> activitiesDic = new Dictionary<string, Activity>();

@@ -146,9 +146,6 @@ namespace litstudio
             //File
             this.AddNodeGroup(this.activityTreeView.Nodes, "文件处理", ActivityGroup.File, filterText).Expand();
 
-            //数据库
-            this.AddNodeGroup(this.activityTreeView.Nodes, "数据库", ActivityGroup.Database, filterText).Expand();
-
             //网络
             this.AddNodeGroup(this.activityTreeView.Nodes, "网络", ActivityGroup.NetWork, filterText).Expand();
 
@@ -180,7 +177,6 @@ namespace litstudio
                 }
             }
 
-            //if (treeNode.Nodes.Count > 0) treeNode.ExpandAll();
             return treeNode;
         }
 

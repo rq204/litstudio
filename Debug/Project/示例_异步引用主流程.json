@@ -1,0 +1,204 @@
+﻿{
+  "Auth": "",
+  "Author": "",
+  "VariableMust": [],
+  "StartVars": [],
+  "ReturnVars": [],
+  "Notes": "",
+  "UserConfigs": {},
+  "Id": "8460c1be-bde6-4cd8-ad9a-86606557ed4a",
+  "Nodes": [
+    {
+      "$type": "litcore.StartNode, litcore",
+      "Id": "5e9c04a5-f006-404c-bc5b-848b64bd22a2",
+      "Bounds": {
+        "X": 260,
+        "Y": 100,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litsdk.StartActivity, litsdk",
+        "Name": "开始",
+        "Group": 0
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "24fc0185-7c34-45b7-a350-00b06c1436ef",
+          "NextNodeId": "0f70a794-a8bc-483d-8fb4-c8107081718d",
+          "Bounds": {
+            "X": 290,
+            "Y": 130,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.EndNode, litcore",
+      "Id": "20920ec1-16bd-4392-91dc-f67d4efa7cf5",
+      "Bounds": {
+        "X": 260,
+        "Y": 500,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litsdk.EndActivity, litsdk",
+        "Name": "结束",
+        "Group": 0
+      },
+      "Ports": []
+    },
+    {
+      "$type": "litcore.LoopEndNode, litcore",
+      "LoopStartNodeId": "0f70a794-a8bc-483d-8fb4-c8107081718d",
+      "Id": "6059e5a8-0e53-4bc2-9728-c52fb23e006d",
+      "Bounds": {
+        "X": 260,
+        "Y": 420,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.LoopEndActivity, litcore",
+        "Name": "循环开始",
+        "Group": 0
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "2ef4a609-9345-4ea2-b6ad-fc1bf077687c",
+          "NextNodeId": "20920ec1-16bd-4392-91dc-f67d4efa7cf5",
+          "Bounds": {
+            "X": 290,
+            "Y": 450,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.LoopStartNode, litcore",
+      "LoopEndNodeId": "6059e5a8-0e53-4bc2-9728-c52fb23e006d",
+      "Id": "0f70a794-a8bc-483d-8fb4-c8107081718d",
+      "Bounds": {
+        "X": 260,
+        "Y": 180,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.LoopStartActivity, litcore",
+        "LoopType": 1,
+        "Number": 100,
+        "ListVarName": "",
+        "SaveVarName": "",
+        "IntVarName": "",
+        "TableVarName": "",
+        "Name": "循环开始",
+        "Group": 0
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "6ec01df4-b621-4250-891f-3409ef376b28",
+          "NextNodeId": "c5ddc6a2-825e-4e3f-ac5b-b5015126663b",
+          "Bounds": {
+            "X": 290,
+            "Y": 210,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.ProcessNode, litcore",
+      "Id": "c5ddc6a2-825e-4e3f-ac5b-b5015126663b",
+      "Bounds": {
+        "X": 260,
+        "Y": 260,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.IntActivity, litcore",
+        "IntType": 2,
+        "IntVarName": "num",
+        "SetValue": 1,
+        "SetVarName": "",
+        "SaveVarMame": "num",
+        "Group": 4,
+        "Name": "加减乘除"
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "c107b7ad-4110-4635-9a23-767f0e30c074",
+          "NextNodeId": "aed09228-54b1-4f49-a985-490a9f507855",
+          "Bounds": {
+            "X": 290,
+            "Y": 290,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.ProcessNode, litcore",
+      "Id": "aed09228-54b1-4f49-a985-490a9f507855",
+      "Bounds": {
+        "X": 260,
+        "Y": 340,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.ProjectActivity, litcore",
+        "FilePath": "E:\\litrpa\\Debug\\Project\\示例_异步被引用子流程.json",
+        "ProjectStr": "",
+        "Bak": "",
+        "OnlyUserLog": true,
+        "RefVarNames": [],
+        "UseAsyn": true,
+        "Name": "流程引用",
+        "Group": 0,
+        "ThreadNum": 10
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "b55157ec-2d80-42ae-ba3b-df38d19b0f7b",
+          "NextNodeId": "6059e5a8-0e53-4bc2-9728-c52fb23e006d",
+          "Bounds": {
+            "X": 290,
+            "Y": 370,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    }
+  ],
+  "Variables": [
+    {
+      "Name": "num",
+      "VariableType": 1,
+      "StrValue": null,
+      "ListValue": [],
+      "IntValue": 46,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": null,
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    }
+  ]
+}

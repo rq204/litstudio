@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Windows.Threading;
 using Gma.UserActivityMonitor;
 using System.Linq;
-//using WindowsAccessBridgeInterop;
 using FlaUI.Core.AutomationElements;
 using System.Collections.Generic;
 

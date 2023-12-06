@@ -619,13 +619,29 @@
     <None Include="Resources\设计器.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\litchrome\litchrome.csproj">
+      <Project>{46afa76d-c96e-4d61-a44a-f857089fe7ef}</Project>
+      <Name>litchrome</Name>
+    </ProjectReference>
     <ProjectReference Include="..\litcore\litcore.csproj">
       <Project>{054bed2f-5662-4c09-b406-e18e6f8d39ef}</Project>
       <Name>litcore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\litexcel\litexcel.csproj">
+      <Project>{d953af3c-309b-46b4-b1e2-ed49f1692004}</Project>
+      <Name>litexcel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\litmail\litmail.csproj">
+      <Project>{231192fe-77a0-4f7a-b53c-aa181b2a9bfc}</Project>
+      <Name>litmail</Name>
+    </ProjectReference>
     <ProjectReference Include="..\litsdk\litsdk.csproj">
       <Project>{48a0597a-0553-40d3-9e8b-5e1858d3451c}</Project>
       <Name>litsdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\litui\litui.csproj">
+      <Project>{d546d00a-4fe8-4045-b6a5-860e72f3f47c}</Project>
+      <Name>litui</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,134 @@
+﻿{
+  "Auth": "",
+  "Author": "",
+  "VariableMust": [],
+  "StartVars": [],
+  "ReturnVars": [],
+  "Notes": "",
+  "UserConfigs": {},
+  "Id": "432a29c1-0678-4293-8eb6-fca150194b17",
+  "Nodes": [
+    {
+      "$type": "litcore.StartNode, litcore",
+      "Id": "dec73f75-437d-433e-afa0-1ad3b9e88fa5",
+      "Bounds": {
+        "X": 260,
+        "Y": 80,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litsdk.StartActivity, litsdk",
+        "Name": "开始",
+        "Group": 0
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "42b9abe9-216d-40ef-ad55-2faab0dfdb23",
+          "NextNodeId": "358f309a-d445-434d-ae1b-f41678a0279d",
+          "Bounds": {
+            "X": 290,
+            "Y": 110,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.EndNode, litcore",
+      "Id": "0631dbf8-8568-47dc-93d9-2809ec7ec9d0",
+      "Bounds": {
+        "X": 260,
+        "Y": 320,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litsdk.EndActivity, litsdk",
+        "Name": "结束",
+        "Group": 0
+      },
+      "Ports": []
+    },
+    {
+      "$type": "litcore.ProcessNode, litcore",
+      "Id": "358f309a-d445-434d-ae1b-f41678a0279d",
+      "Bounds": {
+        "X": 260,
+        "Y": 160,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.LogActivity, litcore",
+        "LogFormat": "当前数字：{-var.num-}",
+        "Name": "自定义日志",
+        "Group": 10
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "532f7e71-cba8-41d7-90a1-ff31c2dd5065",
+          "NextNodeId": "1e6b4c52-0e9f-487f-b2bd-328146688ac2",
+          "Bounds": {
+            "X": 290,
+            "Y": 190,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.ProcessNode, litcore",
+      "Id": "1e6b4c52-0e9f-487f-b2bd-328146688ac2",
+      "Bounds": {
+        "X": 260,
+        "Y": 240,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.SleepActivity, litcore",
+        "MilliSeconds": 3000,
+        "MilliSecondsEnd": 5000,
+        "UseRandNum": true,
+        "UseVariable": false,
+        "IntVarName": "",
+        "Name": "暂停等待",
+        "Group": 0
+      },
+      "Ports": [
+        {
+          "$type": "litsdk.NextPort, litsdk",
+          "Id": "c376490a-171e-4676-9e10-4f97098e60a2",
+          "NextNodeId": "0631dbf8-8568-47dc-93d9-2809ec7ec9d0",
+          "Bounds": {
+            "X": 290,
+            "Y": 270,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    }
+  ],
+  "Variables": [
+    {
+      "Name": "num",
+      "VariableType": 1,
+      "StrValue": null,
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": null,
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    }
+  ]
+}

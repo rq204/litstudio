@@ -1,0 +1,287 @@
+﻿{
+  "Auth": "",
+  "UserConfigs": {},
+  "Id": "4c487a3e-cf7c-4dd1-91b6-508ed332670e",
+  "Nodes": [
+    {
+      "$type": "litcore.StartNode, litcore",
+      "Id": "5da839c0-f481-4918-a587-a6eb2231e4f3",
+      "Bounds": {
+        "X": 260,
+        "Y": 80,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litsdk.StartActivity, litsdk",
+        "Name": "开始",
+        "Group": 0
+      },
+      "Ports": [
+        {
+          "$type": "litcore.NextPort, litcore",
+          "Id": "416035a1-1451-47e8-85f2-94d90aac6983",
+          "NextNodeId": "34794fa8-13d2-4c2e-99e3-82c36a5fac54",
+          "Bounds": {
+            "X": 290,
+            "Y": 110,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.EndNode, litcore",
+      "Id": "b708fe22-024b-4120-b98b-bd728211c9d2",
+      "Bounds": {
+        "X": 260,
+        "Y": 340,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litsdk.EndActivity, litsdk",
+        "Name": "结束",
+        "Group": 0
+      },
+      "Ports": []
+    },
+    {
+      "$type": "litcore.ProcessNode, litcore",
+      "Id": "34794fa8-13d2-4c2e-99e3-82c36a5fac54",
+      "Bounds": {
+        "X": 260,
+        "Y": 160,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.JsonActivity, litcore",
+        "SourceVarName": "json是数组",
+        "VarNameJsonPaths": {
+          "aa字符": "$.[*].aa",
+          "aa列表": "$.[*].aa"
+        },
+        "Name": "Json是数组",
+        "Group": 4
+      },
+      "Ports": [
+        {
+          "$type": "litcore.NextPort, litcore",
+          "Id": "ee9e503d-9721-4538-86c9-0a9e423ad978",
+          "NextNodeId": "f6cf46b0-d870-457a-8226-15886650483a",
+          "Bounds": {
+            "X": 290,
+            "Y": 190,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    },
+    {
+      "$type": "litcore.ProcessNode, litcore",
+      "Id": "f6cf46b0-d870-457a-8226-15886650483a",
+      "Bounds": {
+        "X": 260,
+        "Y": 240,
+        "Width": 80,
+        "Height": 40
+      },
+      "Activity": {
+        "$type": "litcore.activity.JsonActivity, litcore",
+        "SourceVarName": "json是对象",
+        "VarNameJsonPaths": {
+          "bb字符": "$.bb",
+          "cc字符": "$.cc",
+          "cc列表": "$.cc[*]",
+          "dd字符": "$.cc[*].dd",
+          "dd列表": "$.cc[*].dd",
+          "ff字符": "$.ee.ff"
+        },
+        "Name": "Json是对象",
+        "Group": 4
+      },
+      "Ports": [
+        {
+          "$type": "litcore.NextPort, litcore",
+          "Id": "a534ea79-0d9b-4234-84b0-c3d478c57b59",
+          "NextNodeId": "b708fe22-024b-4120-b98b-bd728211c9d2",
+          "Bounds": {
+            "X": 290,
+            "Y": 270,
+            "Width": 20,
+            "Height": 20
+          }
+        }
+      ]
+    }
+  ],
+  "Variables": [
+    {
+      "Name": "list",
+      "VariableType": 2,
+      "StrValue": null,
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": null,
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "json是数组",
+      "VariableType": 0,
+      "StrValue": "[{\"aa\":\"abb\"},{\"aa\":\"acc\"},{\"aa\":\"aed\"}]",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "[{\"aa\":\"abb\"},{\"aa\":\"acc\"},{\"aa\":\"aed\"}]",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "json是对象",
+      "VariableType": 0,
+      "StrValue": "{\"bb\":\"bbb\",\"cc\":[{\"dd\":\"vcc\"},{\"dd\":\"eed\"}],\"ee\":{\"ff\":\"fff\"}}",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "{\"bb\":\"bbb\",\"cc\":[{\"dd\":\"vcc\"},{\"dd\":\"eed\"}],\"ee\":{\"ff\":\"fff\"}}",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "aa字符",
+      "VariableType": 0,
+      "StrValue": "abb",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "aa列表",
+      "VariableType": 2,
+      "StrValue": null,
+      "ListValue": [
+        "abb",
+        "acc",
+        "aed"
+      ],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": null,
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "bb字符",
+      "VariableType": 0,
+      "StrValue": "bbb",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "cc字符",
+      "VariableType": 0,
+      "StrValue": "[\r\n  {\r\n    \"dd\": \"vcc\"\r\n  },\r\n  {\r\n    \"dd\": \"eed\"\r\n  }\r\n]",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "cc列表",
+      "VariableType": 2,
+      "StrValue": null,
+      "ListValue": [
+        "{\r\n  \"dd\": \"vcc\"\r\n}",
+        "{\r\n  \"dd\": \"eed\"\r\n}"
+      ],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": null,
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "dd字符",
+      "VariableType": 0,
+      "StrValue": "vcc",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "dd列表",
+      "VariableType": 2,
+      "StrValue": null,
+      "ListValue": [
+        "vcc",
+        "eed"
+      ],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": null,
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    },
+    {
+      "Name": "ff字符",
+      "VariableType": 0,
+      "StrValue": "fff",
+      "ListValue": [],
+      "IntValue": 0,
+      "BoolenValue": false,
+      "TableValue": null,
+      "InitTableValue": null,
+      "InitStrValue": "",
+      "InitIntValue": 0,
+      "InitListValue": [],
+      "TableColumns": []
+    }
+  ]
+}

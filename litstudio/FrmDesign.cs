@@ -984,7 +984,6 @@ namespace litstudio
             }
         }
 
-
         private void tsmiWebSite_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.litrpa.com/");
