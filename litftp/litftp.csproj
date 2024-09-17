@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net461;net6.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentFTP" Version="42.0.0" />
+		<PackageReference Include="SSH.NET" Version="2020.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\litsdk\litsdk.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<Reference Include="System.Windows.Forms" />
+		<Compile Update="FtpUI.cs" />
+		<Compile Update="FtpUI.designer.cs">
+			<DependentUpon>FtpUI.cs</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="FtpUI.resx">
+			<DependentUpon>FtpUI.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<Compile Remove="FtpUI*.cs" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+</Project>
