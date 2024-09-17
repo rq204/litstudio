@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9AA602A-78DE-40EE-96FF-47992A046AD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>litapps</RootNamespace>
+    <AssemblyName>litapps</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AppStartActivity.cs" />
+    <Compile Include="AppStartUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppStartUI.Designer.cs">
+      <DependentUpon>AppStartUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClipboardActivity.cs" />
+    <Compile Include="ClipboardType.cs" />
+    <Compile Include="ClipboardUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClipboardUI.Designer.cs">
+      <DependentUpon>ClipboardUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExplorerOpenActivity.cs" />
+    <Compile Include="ExplorerOpenUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExplorerOpenUI.Designer.cs">
+      <DependentUpon>ExplorerOpenUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserInput.Designer.cs">
+      <DependentUpon>FrmUserInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxActivity.cs" />
+    <Compile Include="MessageBoxType.cs" />
+    <Compile Include="MessageBoxUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MessageBoxUI.Designer.cs">
+      <DependentUpon>MessageBoxUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PskillActivity.cs" />
+    <Compile Include="PskillCloseType.cs" />
+    <Compile Include="PskillFindType.cs" />
+    <Compile Include="PskillUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PskillUI.Designer.cs">
+      <DependentUpon>PskillUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lordeo\Enums.cs" />
+    <Compile Include="Lordeo\Structs.cs" />
+    <Compile Include="Lordeo\Win32API.cs" />
+    <Compile Include="SelectIOActivity.cs" />
+    <Compile Include="SelectIOUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectIOUI.Designer.cs">
+      <DependentUpon>SelectIOUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInputActivity.cs" />
+    <Compile Include="UserInputConfig.cs" />
+    <Compile Include="UserInputType.cs" />
+    <Compile Include="UserInputUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInputUI.Designer.cs">
+      <DependentUpon>UserInputUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinBeepActivity.cs" />
+    <Compile Include="WinBeepType.cs" />
+    <Compile Include="WinBeepUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinBeepUI.Designer.cs">
+      <DependentUpon>WinBeepUI.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\litsdk\litsdk.csproj">
+      <Project>{48a0597a-0553-40d3-9e8b-5e1858d3451c}</Project>
+      <Name>litsdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppStartUI.resx">
+      <DependentUpon>AppStartUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClipboardUI.resx">
+      <DependentUpon>ClipboardUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExplorerOpenUI.resx">
+      <DependentUpon>ExplorerOpenUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserInput.resx">
+      <DependentUpon>FrmUserInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxUI.resx">
+      <DependentUpon>MessageBoxUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PskillUI.resx">
+      <DependentUpon>PskillUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectIOUI.resx">
+      <DependentUpon>SelectIOUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInputUI.resx">
+      <DependentUpon>UserInputUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinBeepUI.resx">
+      <DependentUpon>WinBeepUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
