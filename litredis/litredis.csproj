@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net461;net6.0</TargetFrameworks>
+		<AssemblyVersion>1.3.21.1020</AssemblyVersion>
+		<FileVersion>1.3.21.1020</FileVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>../Debug/</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CSRedisCore" Version="3.8.669" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\litcore\litcore.csproj" />
+		<ProjectReference Include="..\litsdk\litsdk.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<Reference Include="System.Windows.Forms" />
+		<Compile Update="RedisUI.cs" />
+		<Compile Update="RedisUI.designer.cs">
+			<DependentUpon>RedisUI.cs</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="RedisUI.resx">
+			<DependentUpon>RedisUI.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<Compile Remove="RedisUI*.cs" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<OutputPath>..\Debug\</OutputPath>
+	</PropertyGroup>
+
+</Project>
